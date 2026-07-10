@@ -15,34 +15,82 @@
     </a>
 
 
+
+    <!-- Pencarian -->
+
+    <form action="{{ route('balita.index') }}" method="GET" class="mb-3">
+
+        <div class="input-group">
+
+            <input type="text"
+                   name="keyword"
+                   class="form-control"
+                   placeholder="🔍 Cari nama balita atau NIK..."
+                   value="{{ request('keyword') }}">
+
+
+            <button class="btn btn-success">
+                Cari
+            </button>
+
+
+        </div>
+
+    </form>
+
+
+
+
+
     @if(session('success'))
 
         <div class="alert alert-success">
+
             {{ session('success') }}
+
         </div>
 
     @endif
 
 
 
+
+
+
     <table class="table table-bordered table-striped">
+
 
         <thead class="table-success">
 
+
             <tr>
+
                 <th>No</th>
+
                 <th>NIK</th>
+
                 <th>Nama Balita</th>
+
                 <th>Jenis Kelamin</th>
+
                 <th>Tanggal Lahir</th>
+
                 <th>Nama Orang Tua</th>
+
                 <th>Berat Badan</th>
+
                 <th>Tinggi Badan</th>
+
                 <th>Alamat</th>
+
                 <th>Aksi</th>
+
             </tr>
 
+
         </thead>
+
+
 
 
 
@@ -54,9 +102,11 @@
 
             <tr>
 
+
                 <td>
                     {{ $loop->iteration }}
                 </td>
+
 
 
                 <td>
@@ -64,9 +114,11 @@
                 </td>
 
 
+
                 <td>
                     {{ $balita->nama_balita }}
                 </td>
+
 
 
                 <td>
@@ -74,9 +126,11 @@
                 </td>
 
 
+
                 <td>
                     {{ $balita->tanggal_lahir }}
                 </td>
+
 
 
                 <td>
@@ -84,14 +138,17 @@
                 </td>
 
 
+
                 <td>
                     {{ $balita->berat_badan }} kg
                 </td>
 
 
+
                 <td>
                     {{ $balita->tinggi_badan }} cm
                 </td>
+
 
 
                 <td>
@@ -100,13 +157,17 @@
 
 
 
+
                 <td>
 
 
                     <a href="{{ route('balita.edit', $balita->id) }}"
                        class="btn btn-warning btn-sm">
+
                         Edit
+
                     </a>
+
 
 
 
@@ -120,23 +181,30 @@
                         @method('DELETE')
 
 
+
                         <button type="submit"
                                 class="btn btn-danger btn-sm"
                                 onclick="return confirm('Yakin ingin menghapus data ini?')">
+
                             Hapus
+
                         </button>
 
 
                     </form>
 
 
+
                 </td>
+
 
 
             </tr>
 
 
+
         @empty
+
 
 
             <tr>
@@ -147,7 +215,9 @@
 
                 </td>
 
+
             </tr>
+
 
 
         @endforelse
@@ -157,7 +227,9 @@
         </tbody>
 
 
+
     </table>
+
 
 
 </div>

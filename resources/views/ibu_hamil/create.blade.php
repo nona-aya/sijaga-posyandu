@@ -22,6 +22,7 @@
             <input type="text"
                    name="nik"
                    class="form-control"
+                   maxlength="16"
                    placeholder="Masukkan NIK"
                    required>
         </div>

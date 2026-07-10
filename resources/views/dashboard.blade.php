@@ -2,14 +2,16 @@
 
 @section('content')
 
-<div class="container mt-4">
+<div class="container mt-5">
 
 
-    <div class="text-center mb-4">
+    <!-- Header -->
 
-        <h2 class="fw-bold">
-            SIJAGA POSYANDU
-        </h2>
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold text-success">
+            🌿 SIJAGA POSYANDU
+        </h1>
 
         <p class="text-muted">
             Sistem Informasi Jadwal dan Data Posyandu
@@ -19,134 +21,144 @@
 
 
 
+
+    <!-- Statistik -->
+
     <div class="row g-4">
 
 
-        <!-- Jadwal -->
 
         <div class="col-md-4">
 
-            <div class="card shadow border-0 h-100">
 
-                <div class="card-body text-center">
+            <div class="card shadow border-0 text-center">
 
-                    <div class="fs-1 mb-3">
+
+                <div class="card-body">
+
+
+                    <h1 class="text-success">
                         📅
-                    </div>
-
-
-                    <h5 class="fw-bold">
-                        Jadwal Posyandu
-                    </h5>
-
-
-                    <h1 class="text-primary fw-bold">
-                        {{ $jumlahJadwal }}
                     </h1>
 
 
+                    <h2 class="fw-bold">
+                        {{ $jumlahJadwal }}
+                    </h2>
+
+
                     <p class="text-muted">
-                        Total Jadwal Kegiatan
+                        Jadwal Posyandu
                     </p>
 
 
+
                     <a href="{{ route('jadwal.index') }}"
-                       class="btn btn-primary">
+                       class="btn btn-success">
+
                         Lihat Jadwal
+
                     </a>
 
 
                 </div>
 
+
             </div>
+
 
         </div>
 
 
 
 
-        <!-- Balita -->
+
 
         <div class="col-md-4">
 
-            <div class="card shadow border-0 h-100">
 
-                <div class="card-body text-center">
+            <div class="card shadow border-0 text-center">
 
 
-                    <div class="fs-1 mb-3">
+                <div class="card-body">
+
+
+                    <h1 class="text-success">
                         👶
-                    </div>
-
-
-                    <h5 class="fw-bold">
-                        Data Balita
-                    </h5>
-
-
-                    <h1 class="text-success fw-bold">
-                        {{ $jumlahBalita }}
                     </h1>
 
 
+                    <h2 class="fw-bold">
+                        {{ $jumlahBalita }}
+                    </h2>
+
+
                     <p class="text-muted">
-                        Total Data Balita
+                        Data Balita
                     </p>
+
 
 
                     <a href="{{ route('balita.index') }}"
                        class="btn btn-success">
-                        Lihat Balita
+
+                        Lihat Data
+
                     </a>
 
 
                 </div>
 
+
             </div>
+
 
         </div>
 
 
 
 
-        <!-- Ibu Hamil -->
+
+
 
         <div class="col-md-4">
 
-            <div class="card shadow border-0 h-100">
 
-                <div class="card-body text-center">
+            <div class="card shadow border-0 text-center">
 
 
-                    <div class="fs-1 mb-3">
+                <div class="card-body">
+
+
+                    <h1 class="text-success">
                         🤰
-                    </div>
-
-
-                    <h5 class="fw-bold">
-                        Data Ibu Hamil
-                    </h5>
-
-
-                    <h1 class="text-danger fw-bold">
-                        {{ $jumlahIbuHamil }}
                     </h1>
 
 
+                    <h2 class="fw-bold">
+                        {{ $jumlahIbuHamil }}
+                    </h2>
+
+
                     <p class="text-muted">
-                        Total Data Ibu Hamil
+                        Data Ibu Hamil
                     </p>
 
 
+
                     <a href="{{ route('ibu_hamil.index') }}"
-                       class="btn btn-danger">
-                        Lihat Ibu Hamil
+                       class="btn btn-success">
+
+                        Lihat Data
+
                     </a>
 
 
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -155,13 +167,55 @@
 
 
 
-    <div class="mt-5 text-center">
 
-        <p class="text-muted">
-            © {{ date('Y') }} SIJAGA POSYANDU
-        </p>
+
+
+    <!-- Menu Cepat -->
+
+    <div class="card shadow border-0 mt-5">
+
+
+        <div class="card-body text-center">
+
+
+            <h4 class="fw-bold mb-4">
+                Menu Cepat
+            </h4>
+
+
+
+            <a href="{{ route('jadwal.create') }}"
+               class="btn btn-outline-success m-2">
+
+                + Tambah Jadwal
+
+            </a>
+
+
+
+            <a href="{{ route('balita.create') }}"
+               class="btn btn-outline-success m-2">
+
+                + Tambah Balita
+
+            </a>
+
+
+
+            <a href="{{ route('ibu_hamil.create') }}"
+               class="btn btn-outline-success m-2">
+
+                + Tambah Ibu Hamil
+
+            </a>
+
+
+        </div>
+
 
     </div>
+
+
 
 
 </div>
